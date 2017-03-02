@@ -1,0 +1,48 @@
+{
+  "name": "yuki-orienter",
+  "description": "A npm project",
+  "version": "0.0.0",
+  "author": "limichange <limichange@hotmail.com>",
+  "main": "dist/yuki-orienter.common.js",
+  "unpkg": "dist/yuki-orienter.js",
+  "scripts": {
+    "dev": "rollup -cw",
+    "build": "rollup -c --environment BUILD && uglifyjs dist/yuki-orienter.js > dist/yuki-orienter.min.js",
+    "test": "npm run lint && ava",
+    "lint": "eslint --ext .js src test/unit/specs"
+  },
+  "license": "MIT",
+  "pre-commit": [
+    "lint"
+  ],
+  "keywords": [
+    "yuki"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "pre-commit": "^1.1.3",
+    "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-watch": "^3.2.2",
+    "uglify-js": "^2.7.5"
+  },
+  "standard": {
+    "globals": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:yuki-torii/yuki-orienter.git.git"
+  },
+  "bugs": {
+    "url": "git@github.com:yuki-torii/yuki-orienter.git/issues"
+  },
+  "homepage": "git@github.com:yuki-torii/yuki-orienter.git#readme"
+}
