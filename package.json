@@ -3,12 +3,15 @@
   "description": "A npm project",
   "version": "0.0.0",
   "author": "limichange <limichange@hotmail.com>",
-  "main": "dist/yuki-orienter.common.js",
+  "main": "dist/yuki-orienter.js",
+  "module": "dist/yuki-orienter.esm.js",
   "unpkg": "dist/yuki-orienter.js",
   "scripts": {
-    "dev": "rollup -cw",
-    "build": "rollup -c --environment BUILD && uglifyjs dist/yuki-orienter.js > dist/yuki-orienter.min.js",
-    "test": "npm run lint && ava",
+    "dev": "node examples/server.js",
+    "dev:dist": "rollup -wm -c build/rollup.config.js",
+    "build": "npm run build:main && npm run build:esm",
+    "build:main": "rollup -c build/rollup.config.js && uglifyjs dist/yuki-orienter.js -cm --comments -o dist/yuki-orienter.min.js",
+    "build:esm": "rollup -c build/rollup.config.js --environment ESM",
     "lint": "eslint --ext .js src test/unit/specs"
   },
   "license": "MIT",
@@ -18,10 +21,8 @@
   "keywords": [
     "yuki"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "ava": "^0.18.1",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
@@ -29,8 +30,7 @@
     "pre-commit": "^1.1.3",
     "rollup": "^0.41.4",
     "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
     "rollup-watch": "^3.2.2",
     "uglify-js": "^2.7.5"
   },
