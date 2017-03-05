@@ -1,3 +1,3 @@
-let yukiOrienter = {}
+import yukiOrienter from './orienter'
 
 export default yukiOrienter
