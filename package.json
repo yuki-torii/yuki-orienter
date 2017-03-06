@@ -1,7 +1,7 @@
 {
   "name": "yuki-orienter",
   "description": "A npm project",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "limichange <limichange@hotmail.com>",
   "main": "dist/yuki-orienter.js",
   "module": "dist/yuki-orienter.esm.js",
