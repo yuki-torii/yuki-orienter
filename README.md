@@ -14,7 +14,13 @@ $ yarn add yuki-orienter
 
 ## Usage
 ```js
-import yuki-orienter from 'yuki-orienter'
+import Orienter from 'yuki-orienter'
+
+const orienter = new Orienter({
+  onOrient: console.log
+})
+
+console.log(orienter)
 ```
 
 ## Development
