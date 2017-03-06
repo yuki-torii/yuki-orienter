@@ -1,7 +1,7 @@
-import YukiOrienter from 'yuki-orienter'
+import Orienter from 'yuki-orienter'
 
-console.log(YukiOrienter)
-
-const orienter = new YukiOrienter()
+const orienter = new Orienter({
+  onOrient: console.log
+})
 
 console.log(orienter)
